@@ -81,16 +81,15 @@ Most markdown options are passed as-is to the [marked](https://github.com/chjj/m
 * `manual`: will pass the language name from markdown to the highlight function
 * `codeLines`: specify text that should wrap code lines
 
-## Meta info associaced to markdown pages
+## Meta info associated with markdown pages
 
-When this tool generates HTML pages from `*.md` files it would be nice to provide some meta information that can be used to generate custom
-`title` and `meta description` tags. This fork of `grunt-markdown` supports exactly that.
+When this tool generates HTML pages from `*.md` files it would be nice to provide some meta information that can be used to generate custom `title` and `meta description` tags. This fork of `grunt-markdown` supports exactly that.
 
-`*.md` files can be annotated as follows (both annotation are optional):
+`*.md` files can be annotated as follows (both annotations are optional):
 
     <!--
     @-title:nice page title
-    @-description: google will love this!
+    @-description:google will love this!
     -->
     
 The resulting HTML will contain:
