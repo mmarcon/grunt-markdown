@@ -65,12 +65,12 @@ exports.init = function(grunt) {
     
     //Support for meta info
     //<!--
-    //@-name:<page-name>
+    //@-title:<page-name>
     //@-description:<page-description>
     //-->
     var meta = {}, matcher;
-    matcher = src.match(/@-name:\s?([^@:\n]+)\n/i);
-    meta.name = matcher && matcher.length > 1 && matcher[1];
+    matcher = src.match(/@-title:\s?([^@:\n]+)\n/i);
+    meta.title = matcher && matcher.length > 1 && matcher[1];
     matcher = src.match(/@-description:\s?([^@:\n]+)\n/i);
     meta.description = matcher && matcher.length > 1 && matcher[1];
 
