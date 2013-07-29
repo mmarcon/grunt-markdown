@@ -89,7 +89,7 @@ When this tool generates HTML pages from `*.md` files it would be nice to provid
 `*.md` files can be annotated as follows (both annotation are optional):
 
     <!--
-    @-name:nice page title
+    @-title:nice page title
     @-description: google will love this!
     -->
     
