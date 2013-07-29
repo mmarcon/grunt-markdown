@@ -20,9 +20,11 @@ module.exports = function(grunt) {
       htmlExtension: 'html',
       markdownExtension: 'md',
       markdownOptions: {},
-      template: path.join(__dirname, 'template.html')
+      template: path.join(__dirname, 'template.html'),
+      pages: false
     });
     var template = grunt.file.read(options.template);
+    var pages = {};
 
     // Iterate over all specified file groups.
     grunt.util.async.forEachLimit(this.files, 25, function (file, next) {
@@ -30,15 +32,15 @@ module.exports = function(grunt) {
     }.bind(this), this.async());
 
     function convert(src, dest, next){
-      var content = markdown.markdown(
-        grunt.file.read(src),
-        options.markdownOptions,
-        template
-      );
+        var content = markdown.markdown(
+            grunt.file.read(src),
+            options.markdownOptions,
+            template
+        );
 
-      grunt.file.write(dest, content);
-      grunt.log.writeln('File "' + dest + '" created.');
-      next();
+        grunt.file.write(dest, content);
+        grunt.log.writeln('File "' + dest + '" created.');
+        next();
     }
   });
 

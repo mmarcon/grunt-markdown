@@ -96,6 +96,15 @@ exports['markdown'] = {
     test.ok($a.text() === 'json', 'should have code text');
     test.done();
 
+  },
+  
+  'should have a title': function(test) {
+    getjQuery();
+    var $title = $result.find('title');
+    console.log($title.text());
+    test.ok($title.text() === 'The name is this', 'the title should be set from meta');
+    test.done();
+
   }
 
 };

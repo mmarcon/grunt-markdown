@@ -62,10 +62,21 @@ exports.init = function(grunt) {
     markdown.setOptions(options);
 
     grunt.verbose.write('Marking down...');
+    
+    //Support for meta info
+    //<!--
+    //@-name:<page-name>
+    //@-description:<page-description>
+    //-->
+    var meta = {}, matcher;
+    matcher = src.match(/@-name:<([^@:<>]+)>/i);
+    meta.name = matcher && matcher.length > 1 && matcher[1];
+    matcher = src.match(/@-description:<([^@:<>]+)>/i);
+    meta.description = matcher && matcher.length > 1 && matcher[1];
 
     html = markdown(src);
 
-    return _.template(template, {content:html});
+    return _.template(template, {content:html, meta: meta});
 
   };
 
