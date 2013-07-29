@@ -1,6 +1,6 @@
 <!--
-@-name:<The name is this>
-@-description:<Monkey>
+@-name:The name is this
+@-description: Monkey
 -->
 #This is a test of GFM for javascript
 

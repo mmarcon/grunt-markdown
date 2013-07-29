@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     
     <title><%=(meta && meta.name) || 'docs'%></title>
+    <%if(meta && meta.description){%>
+    <meta name="description" content="<%=meta.description%>">
+    <%}%>
     <style>
       /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
       pre code {

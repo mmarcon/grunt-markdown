@@ -69,9 +69,9 @@ exports.init = function(grunt) {
     //@-description:<page-description>
     //-->
     var meta = {}, matcher;
-    matcher = src.match(/@-name:<([^@:<>]+)>/i);
+    matcher = src.match(/@-name:\s?([^@:\n]+)\n/i);
     meta.name = matcher && matcher.length > 1 && matcher[1];
-    matcher = src.match(/@-description:<([^@:<>]+)>/i);
+    matcher = src.match(/@-description:\s?([^@:\n]+)\n/i);
     meta.description = matcher && matcher.length > 1 && matcher[1];
 
     html = markdown(src);

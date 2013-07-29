@@ -101,10 +101,15 @@ exports['markdown'] = {
   'should have a title': function(test) {
     getjQuery();
     var $title = $result.find('title');
-    console.log($title.text());
     test.ok($title.text() === 'The name is this', 'the title should be set from meta');
     test.done();
-
+  },
+  
+  'should have a description': function(test) {
+    getjQuery();
+    var $desc = $result.find('meta[name="description"]');
+    test.ok($desc.attr('content') === 'Monkey', 'the description should be set from meta');
+    test.done();
   }
 
 };
